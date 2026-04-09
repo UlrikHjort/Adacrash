@@ -17,11 +17,14 @@ endif
 
 .PHONY: all clean run
 
-all: $(BIN_DIR)
+all: $(BIN_DIR) $(OBJ_DIR)
 	$(BUILD_CMD)
 
 $(BIN_DIR):
 	mkdir -p $(BIN_DIR)
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
 run: all
 	./$(BIN_DIR)/$(BINARY)
